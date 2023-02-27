@@ -54,4 +54,4 @@ $sujet1 -> showInfoSujet();
 
 //Afficher messages d'un sujet 
 
-$sujet1 -> afficherMessages($sujet1);
+$sujet1 -> afficherMessages();
