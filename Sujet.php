@@ -1,6 +1,6 @@
 <?php
 
-class sujet
+class Sujet
 {
 
     private string $titre;
@@ -84,8 +84,8 @@ public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verr
         return $this-> messages[] = $message;
     }
 
-    public function afficherMessages(Sujet $sujet) {
-        $messages = $sujet->getMessages();
+    public function afficherMessages() {
+        $messages = $this->getMessages();
         if ($messages) {
             foreach ($messages as $message) {
                 echo "Contenu : " . $message->getContenu() . "<br>";
