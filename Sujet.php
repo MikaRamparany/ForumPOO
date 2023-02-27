@@ -88,7 +88,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verr
         $messages = $this->getMessages();
         if ($messages) {
             foreach ($messages as $message) {
-                echo "Contenu : " . $message->getContenu() . "<br>";
+                echo "Message : " . $message->getContenu() . "<br>";
                 echo "Auteur : " . $message->getAuteur()->getPseudo() . "<br>";
                 echo "Date de publication : " . $message->getdatePubliMessage()->format('d/m/Y H:i:s') . "<br><br>";
             }
