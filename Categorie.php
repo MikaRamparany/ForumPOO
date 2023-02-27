@@ -34,6 +34,19 @@ public function nbSujetCategorie()
     return count($this -> sujets);
 }
 
+public function statutSujet()
+
+{
+    if ($this -> sujets== true)
+    {
+        echo "Sujet clôturé";
+    
+    }
+    else {
+        echo "Sujet ouvert";
+    }
+}
+
 public function __toString()
 {
     return $this -> libelle;
