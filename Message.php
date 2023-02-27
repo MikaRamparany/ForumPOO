@@ -10,7 +10,7 @@ class Message
     public function __construct( $contenu, $datePubliMessage, $auteur, $sujet ) 
     {
         $this -> contenu = $contenu;
-        $this -> datePubliMessage = $datePubliMessage;
+        $this -> datePubliMessage = new DateTime ($datePubliMessage);
         $this -> auteur = $auteur;
         $this -> sujet = $sujet;
     }
@@ -52,7 +52,7 @@ class Message
         $this -> sujet = $sujet;
     }
 
-    
+
 
 
 

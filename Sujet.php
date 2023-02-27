@@ -10,13 +10,14 @@ class sujet
     private Categorie $categorie; // un sujet n'a qu'un categorie 
     private array $messages;
 
-public function __construct ( $titre, $datePubliSujet, $auteur, $verrouille) 
+public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verrouille) 
 
     {
     $this -> titre = $titre;
-    $this -> datePubliSujet = $datePubliSujet;
+    $this -> datePubliSujet = new DateTime ($datePubliSujet);
     $this -> verrouille = true;
     $this -> auteur = $auteur;
+    $this -> categorie = $categorie;
     $this -> categorie ->addSujet($this);
     $this-> messages = [];
     }
@@ -73,7 +74,10 @@ public function __construct ( $titre, $datePubliSujet, $auteur, $verrouille)
         echo $this -> titre;
     }
 
-
+public function __toString()
+{
+    return $this -> titre . " ". $this -> datePubliSujet->format('d/m/Y');
+}
 
 
 }
