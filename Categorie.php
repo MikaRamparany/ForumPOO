@@ -31,24 +31,22 @@ public function addSujet($sujet)
 
 public function nbSujetCategorie()
 {
-    return count($this -> sujets);
+    $nbSujets = count($this -> sujets);
+    echo "<br> <br>La catégorie " . $this -> libelle. " :<br> <br> Nombre de sujets : ". $nbSujets ."<br>";
 }
 
-public function statutSujet()
 
-{
-    if ($this -> sujets== true)
-    {
-        echo "Sujet clôturé";
-    
-    }
-    else {
-        echo "Sujet ouvert";
-    }
-}
+
+// public function afficherListeCategories($categories) {
+//     echo "Voici toutes les catégories : <br>";
+
+//     foreach($categories as $categorie) {
+//         echo "<li>" . $categorie->getLibelle() . "</li>";
+//     }
+// }
 
 public function __toString()
 {
-    return $this -> libelle;
+    return  $this -> libelle ;
 }
 }
