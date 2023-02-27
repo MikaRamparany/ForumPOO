@@ -13,6 +13,7 @@ class Message
         $this -> datePubliMessage = new DateTime ($datePubliMessage);
         $this -> auteur = $auteur;
         $this -> sujet = $sujet;
+        $this -> sujet->addMessage($this);
     }
 
     // Getters and setters
