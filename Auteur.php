@@ -1,12 +1,12 @@
 <?php
 class Auteur {
-    private $mail;
-    private $dateInscription;
-    private $pseudo;
+    private string $mail;
+    private DateTime $dateInscription;
+    private string $pseudo;
 
-    public function __construct($mail, $dateInscription, $pseudo) {
+    public function __construct( $pseudo,$mail,$dateInscription) {
         $this->mail = $mail;
-        $this->dateInscription = $dateInscription;
+        $this->dateInscription = new DateTime ($dateInscription);
         $this->pseudo = $pseudo;
     }
 
@@ -36,6 +36,6 @@ class Auteur {
 
     public function __toString() 
     {
-        return $this->pseudo . ' ' . $this->dateInscription;
+        return $this->pseudo . ' ' . $this->dateInscription->format('d-m-Y');
     }
 }
