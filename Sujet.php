@@ -10,7 +10,7 @@ class Sujet
     private Categorie $categorie; // un sujet n'a qu'un categorie 
     private array $messages;
 
-public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verrouille) 
+public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur, $verrouille) 
 
     {
     $this -> titre = $titre;
@@ -20,6 +20,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verr
     $this -> categorie = $categorie;
     $this -> categorie ->addSujet($this);
     $this-> messages = [];
+    $this-> auteur-> addSujet($this);
     }
 // getters and setters
     public function getTitre() : string {
@@ -84,19 +85,23 @@ public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verr
         return $this-> messages[] = $message;
     }
 
+
     public function afficherMessages() {
+        echo "<link rel='stylesheet' href='style.css' />"; //! pour lier la fonction à ma feuille css
+        echo "<br><span style='font-size:22px; color:black'>$this</span></br>";
         $messages = $this->getMessages();
         if ($messages) {
             foreach ($messages as $message) {
-                echo "Message : " . $message->getContenu() . "<br>";
-                echo "Auteur : " . $message->getAuteur()->getPseudo() . "<br>";
-                echo "Date de publication : " . $message->getdatePubliMessage()->format('d/m/Y H:i:s') . "<br><br>";
+                echo "<div class='message'>";
+                echo "<p class='contenu'>" . $message->getContenu() . "</p>";
+                echo "<p class='info'>" . "Publié par <span class='auteur'>" . $message->getAuteur()->getPseudo() . "</span> le <span class='date'>" . $message->getdatePubliMessage()->format('d/m/Y H:i:s') . "</span></p>";
+                echo "</div>";
             }
-        } else 
-        {
+        } else {
             echo "Aucun message pour ce sujet.";
         }
     }
+    
     public function showInfoSujet() // on va afficher le titre du sujet, la date de création, l'auteur ainsi que les messages qui y sont liés.
 
     {   echo " <br> Sujet : " ;
@@ -111,7 +116,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, $auteur, $verr
 
 public function __toString()
 {
-    return $this -> titre . " ". $this -> datePubliSujet->format('d/m/Y');
+    return $this -> titre ;
 }
 
 
