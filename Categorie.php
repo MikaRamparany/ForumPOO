@@ -37,13 +37,13 @@ public function nbSujetCategorie()
 
 
 
-// public function afficherListeCategories($categories) {
-//     echo "Voici toutes les catégories : <br>";
+public function afficherListeCategories($categories) {
+    echo "Voici toutes les catégories : <br>";
 
-//     foreach($categories as $categorie) {
-//         echo "<li>" . $categorie->getLibelle() . "</li>";
-//     }
-// }
+    foreach($categories as $categorie) {
+        echo "<li>" . $categorie->getLibelle() . "</li>";
+    }
+}
 
 public function __toString()
 {
