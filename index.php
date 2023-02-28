@@ -8,6 +8,7 @@ spl_autoload_register(function ($class_name) {
 });
 
 
+
 // Categories :
 
 $cat1 = new Categorie ("Les Blabla");
@@ -33,7 +34,6 @@ $messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes c
 
 // TESTS : 
 
-// afficher liste des catégories : 
 
 //  echo "Voici les différentes catégories : <br>";
 //  echo "- ". $cat1. "<br>"
@@ -41,6 +41,16 @@ $messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes c
 //     . "- ". $cat3. "<br";
 
     
+
+
+
+// Gestion catégorie pour le tableau liste plus bas : 
+$gestioncategories = new GestionCat($cat1, $cat2, $cat3);
+
+// afficher liste des catégories : 
+
+$gestioncategories -> afficherListeCategories();
+
 //Afficher le nombre de sujet par catégorie : 
 echo "<br> <br> <br> <br> <br> ";
 
@@ -52,7 +62,9 @@ $cat2 -> nbSujetCategorie();
 $sujet2 -> showInfoSujet();
 $sujet1 -> showInfoSujet();
 
-// //Afficher messages d'un sujet 
+
+
+//Afficher messages d'un sujet 
 
 $sujet1 -> afficherMessages();
 $sujet2 -> afficherMessages();
@@ -64,6 +76,8 @@ echo "<br> <br> <br> <br> <br> ";
 $auteur1 -> tableauSujetsAuteur();
 $auteur2 -> tableauSujetsAuteur();
 
-// Liste des catégorie : 
+// POUR LA LISTE DES CATEGORIES : 
 
-afficherListeCategories();
+
+
+
