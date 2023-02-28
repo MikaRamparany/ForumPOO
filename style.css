@@ -6,20 +6,49 @@
     border: 2px solid #4169e100; /* Couleur bleu roi */
     border-radius: 5px;
     padding: 10px;
-    background: linear-gradient( #0f4c81, #000814);
+    background: linear-gradient( #0f4c81, #000814); /* Couleur bleu roi */
     color: #ffffff;
     font-size: 24px;
+  }
+
+  .Topic {
+    color : rgb(7, 99, 39);
+    font : bold;
   }
   
 
 
-.message {
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+  .message {
+    max-width: 70%;
     margin-bottom: 10px;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid rgb(158, 156, 156);
   }
+  
+  .message::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: -1px;
+  transform: translateX(-50%);
+  border-left: 10.51px solid transparent;
+  border-right: 10.51px solid transparent;
+  border-top: 10.51px solid rgb(158, 156, 156);
+}
+
+.message::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 3px;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #f0f0f0;
+}
   
   .message .auteur {
     font-weight: bold;
@@ -36,3 +65,10 @@
     margin-left: 10px;
   }
   
+  .message .button {
+    position: absolute;
+    bottom: -10;
+    right: 12px;
+    
+    
+  }
