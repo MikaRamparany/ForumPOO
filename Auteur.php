@@ -46,20 +46,21 @@ class Auteur {
         $this -> sujets[] = $sujet;
     }
 
-    public function infoSujetsAuteur()
+    public function tableauSujetsAuteur()
     {
         echo "<br><span style='font-size:22px ; color:black'>  Voici les sujets créés par 
         <b> $this->pseudo </b> </span> <br>";
 
         echo "<style type=text/css> table tbody tr:nth-child(even) { background-color: #EFEFEF; } </style> 
-        <table style='border-collapse:collapse; text-align:center; width:500px'>
+        <table style='border-collapse :collapse; text-align:center; width:500px'> 
         <thead >
         
             <tr>
                 <th> Titres </th>
+                <th> Statut </th>
             </tr>
             </thead>
-            <tbody>";
+            <tbody>"; // ouverture tbody qui a été ouvert ligne 55 
 
             echo "<tr> <br>";
 
@@ -71,18 +72,16 @@ class Auteur {
         else 
         {
             
-            // echo "<ul>";
+           
             foreach ($this->sujets as $sujet) 
-            // {
-            //     echo  $sujet->getTitre() ;
-            // }
-            // echo "</ul>";
-            {
-                echo "<tr>
-                <td style='color:#808080'>".$sujet."</td>";
-            }
-            echo "</ul>";
-           echo "</tr>";
+ 
+
+echo "<tr>".
+        "<td style='color:#808080; width: 70% ;text-align:center'>".$sujet -> getTitre ()."</td>"."<td style='display:flex; justify-content:center; '><p style='color:#FFF; font-size:10px; background-color:" . ($sujet->getverrouille() ? "#d43c6c" : "#36bf94") . "; width: 50px;  margin:px; padding:5px'>" . mb_strtoupper($sujet->getverrouille() ? "Clôturé" : "Ouvert") . "</p></td>";
+        echo "</tr>";
+            
+            
+            
            
         }
         echo "</tbody></table><b<>"; // fermeture </tbody> et </table>
