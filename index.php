@@ -1,5 +1,5 @@
 
-
+<h1> POO FORUM </h1>
 
 <?php 
 
@@ -35,23 +35,28 @@ $messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes c
 
 // afficher liste des catégories : 
 
- echo "Voici les différentes catégories : <br>";
- echo "- ". $cat1. "<br>"
-    . "- ". $cat2. "<br>"
-    . "- ". $cat3. "<br";
+//  echo "Voici les différentes catégories : <br>";
+//  echo "- ". $cat1. "<br>"
+//     . "- ". $cat2. "<br>"
+//     . "- ". $cat3. "<br";
 
     
 //Afficher le nombre de sujet par catégorie : 
 echo "<br> <br> <br> <br> <br> ";
 
-$cat1 -> nbSujetCategorie();
-$cat2 -> nbSujetCategorie();
+// $cat1 -> nbSujetCategorie();
+// $cat2 -> nbSujetCategorie();
 
-// Afficher détail d'un sujet : 
+// // Afficher détail d'un sujet : 
 
-$sujet2 -> showInfoSujet();
-$sujet1 -> showInfoSujet();
+// $sujet2 -> showInfoSujet();
+// $sujet1 -> showInfoSujet();
 
-//Afficher messages d'un sujet 
+// //Afficher messages d'un sujet 
 
 $sujet1 -> afficherMessages();
+
+// Afficher tous les sujets d'un auteur :
+// var_dump($auteur1);
+$auteur1 -> infoSujetsAuteur();
+$auteur2 -> infoSujetsAuteur();
