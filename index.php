@@ -58,5 +58,5 @@ $sujet1 -> afficherMessages();
 
 // Afficher tous les sujets d'un auteur :
 // var_dump($auteur1);
-$auteur1 -> infoSujetsAuteur();
-$auteur2 -> infoSujetsAuteur();
+$auteur1 -> tableauSujetsAuteur();
+$auteur2 -> tableauSujetsAuteur();

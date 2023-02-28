@@ -1,3 +1,18 @@
+.Titre {
+    
+    display :flex;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #4169e100; /* Couleur bleu roi */
+    border-radius: 5px;
+    padding: 10px;
+    background: linear-gradient( #0f4c81, #000814);
+    color: #ffffff;
+    font-size: 24px;
+  }
+  
+
+
 .message {
     padding: 10px;
     border: 2px solid gray;
@@ -8,7 +23,7 @@
   
   .message .auteur {
     font-weight: bold;
-    color: gray;
+    color: #2f5a92;
   }
   
   .message .date {
