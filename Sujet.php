@@ -61,16 +61,24 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
     }
     public function statutSujet()
 
-    { 
+    {  
         if ($this -> verrouille == true)
         {
-            // 
-            echo "<td style='display:flex; justify-content:center'><p style='color:#FFF; font-size:10px; background-color:#d43c6c; width: 50px; margin:5px; padding:5px'>".mb_strtoupper("Clôturé")."</p></td>";
+            return 'Clôturé';
+            
         
         }
         else {
-            echo "<td style='display:flex; justify-content:center'><p style='color:#FFF; font-size:10px; background-color:#36bf94; width: 50px; margin:5px; padding:5px'>".mb_strtoupper("Ouvert")."</p></td>";
+            return 'Ouvert';
+          
         }
+        // {
+        //     return 'Clôturé';
+        
+        // }
+        // else {
+        //     return 'Ouvert';
+        // }
     }
 
     public function verrouille(bool $verrouille) 
@@ -88,7 +96,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
     public function afficherMessages() {
         echo "<link rel='stylesheet' href='style.css' />"; //! pour lier la fonction à ma feuille css
-        echo "<br><span style='font-size:22px; color:black'>$this</span></br>";
+        echo "<br><span class='Titre'; >$this</span></br>";
         $messages = $this->getMessages();
         if ($messages) {
             foreach ($messages as $message) {
@@ -106,9 +114,9 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
     {   echo " <br> Sujet : " ;
         echo " " 
-        .$this  -> statutSujet() 
+        
 
-        ." ' ".$this -> titre ." ' "
+        ." ' ".$this -> titre ." ' ".$this  -> statutSujet() 
         
         . " : ". "créé le " . $this -> datePubliSujet->format("d/m/Y") . " par " .$this-> auteur -> getPseudo()
         ."<br> Total messages : ". count($this-> messages)."<br>";
@@ -116,7 +124,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
 public function __toString()
 {
-    return $this -> titre ;
+    return $this -> titre;
 }
 
 
