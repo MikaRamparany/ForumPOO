@@ -70,17 +70,9 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
         }
         else {
             return 'Ouvert';
-            // echo "<td style='display:flex; justify-content:center'><p style='color:#FFF; font-size:10px; background-color:#36bf94; width: 50px; margin:5px; padding:5px'>".mb_strtoupper("Ouvert")."</p></td>";
+     
         }
-        // {
-        //     return 'Clôturé';
-        
-        // }
-        // else {
-        //     return 'Ouvert';
-        // }
     }
-
     public function verrouille(bool $verrouille) 
     
     {
