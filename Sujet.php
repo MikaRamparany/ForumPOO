@@ -88,13 +88,26 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
     public function afficherMessages() {
         echo "<link rel='stylesheet' href='style.css' />"; //! pour lier la fonction à ma feuille css
-        echo "<br><span class='Titre'; >$this</span></br>";
+        echo "<br><span <div class='Titre'; >$this</span> 
+        
+        
+         <p class ='Topic';> Topic créé le " . $this -> datePubliSujet->format("d/m/Y") . " par " .$this-> auteur -> getPseudo()
+        ."</p> 
+        
+        Total messages : ". count($this-> messages)."<br> <br> ";
+
+
         $messages = $this->getMessages();
         if ($messages) {
             foreach ($messages as $message) {
-                echo "<div class='message'>";
-                echo "<p class='contenu'>" . $message->getContenu() . "</p>";
-                echo "<p class='info'>" . "Publié par <span class='auteur'>" . $message->getAuteur()->getPseudo() . "</span> le <span class='date'>" . $message->getdatePubliMessage()->format('d/m/Y H:i:s') . "</span></p>";
+                echo "<div class='message'>"
+                ." <p class= 'Button'>" ."<button>Répondre</button> </p>"
+                . "<p class='contenu'>" 
+                . $message->getContenu() . "</p>"
+                . "<p class='info'>" 
+                . "Publié par <span class='auteur'>" . $message->getAuteur()->getPseudo() 
+                . "</span> le <span class='date'>" . $message->getdatePubliMessage()->format('d/m/Y H:i:s') 
+                . "</span></p>";
                 echo "</div>";
             }
         } else {
