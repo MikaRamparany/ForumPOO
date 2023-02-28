@@ -44,19 +44,26 @@ $messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes c
 //Afficher le nombre de sujet par catégorie : 
 echo "<br> <br> <br> <br> <br> ";
 
-// $cat1 -> nbSujetCategorie();
-// $cat2 -> nbSujetCategorie();
+$cat1 -> nbSujetCategorie();
+$cat2 -> nbSujetCategorie();
 
-// // Afficher détail d'un sujet : 
+// Afficher détail d'un sujet : 
 
-// $sujet2 -> showInfoSujet();
-// $sujet1 -> showInfoSujet();
+$sujet2 -> showInfoSujet();
+$sujet1 -> showInfoSujet();
 
 // //Afficher messages d'un sujet 
 
 $sujet1 -> afficherMessages();
-
-// Afficher tous les sujets d'un auteur :
+$sujet2 -> afficherMessages();
+$sujet3 -> afficherMessages();
+// Afficher tous les sujets d'un auteur : la date de création et 
 // var_dump($auteur1);
+echo "<br> <br> <br> <br> <br> ";
+
 $auteur1 -> tableauSujetsAuteur();
 $auteur2 -> tableauSujetsAuteur();
+
+// Liste des catégorie : 
+
+afficherListeCategories();
