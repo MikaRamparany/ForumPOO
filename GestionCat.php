@@ -20,7 +20,7 @@ class GestionCat
 
     public function afficherListeCategories()
     {
-        echo "<link rel='stylesheet' href='menuListe.css' />";
+        echo "<link rel='stylesheet' href='feuilles css/menuListe.css' />";
         echo "<div class='menu-titre'>Voici toutes nos catégories</div>"
         ."<ul class='menu-deroulant'>";
         

@@ -82,7 +82,7 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
 
     public function afficherMessages() {
-        echo "<link rel='stylesheet' href='style.css' />"; //! pour lier la fonction à ma feuille css
+        echo "<link rel='stylesheet' href='feuilles css/style.css' />"; //! pour lier la fonction à ma feuille css
         echo "<br><span <div class='Titre'; >$this</span> 
         
         
