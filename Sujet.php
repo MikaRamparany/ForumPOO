@@ -110,12 +110,13 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
                 . "</span> le <span class='date'>" . $message->getdatePubliMessage()->format('d/m/Y H:i:s') 
                 . "</span></p>";
                 echo "</div>";
+               
             }
         } else 
             {
             echo "Aucun message pour ce sujet.";
             }
-           
+            echo '<hr style="border-color: #1c58b1; border-width: 2px;">';
         }
 
     
