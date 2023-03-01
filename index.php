@@ -50,7 +50,7 @@ $gestioncategories = new GestionCat($cat1, $cat2, $cat3);
 // afficher liste des catégories : 
 
 
-//  $gestioncategories -> afficherListeCategories();
+ $gestioncategories -> afficherListeCategories();
 
 
 //Afficher le nombre de sujet par catégorie : 
@@ -76,11 +76,19 @@ $sujet3 -> afficherMessages();
 // var_dump($auteur1);
 echo "<br> <br> <br> <br> <br> ";
 
+ // POUR ACTIONS DE VERROUILLAGE OU DEVERROUILLAGE: 
+
+// $sujet1 -> verrouillerSujet(true, $auteur1);
+
+echo "<br> $auteur2 tente de clôturer le sujet $sujet1<br>";
+
+$sujet1 -> verrouillerSujet(true, $auteur2);
+
+//! Statut dans les tableausSUjetsAUteur()dépend de la fonction précédentes, donc attend à l'ordre des fonctions.
+
+echo "<br> <br> <br> <br> <br> <br> ";
 $auteur1 -> tableauSujetsAuteur();
 $auteur2 -> tableauSujetsAuteur();
-
-// POUR LA LISTE DES CATEGORIES : 
-
 
 
 
