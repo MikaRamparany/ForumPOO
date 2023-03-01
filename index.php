@@ -1,36 +1,35 @@
-
 <h1> POO FORUM </h1>
 
-<?php 
+<?php
 
 spl_autoload_register(function ($class_name) {
-    require_once $class_name.'.php';
+    require_once $class_name . '.php';
 });
 
 
 
 // Categories :
 
-$cat1 = new Categorie ("Les Blabla");
-$cat2 = new Categorie ("Astuces et aides dev web");
-$cat3 = new Categorie ("Vos books Github");
+$cat1 = new Categorie("Les Blabla");
+$cat2 = new Categorie("Astuces et aides dev web");
+$cat3 = new Categorie("Vos books Github");
 
 // auteurs : 
 
-$auteur1 = new Auteur ("Lulu68", "lulu68@gmail.com", "2007-03-03 10:00");
-$auteur2 = new Auteur ("SteveMcQueen", "steve@gmail.com", "2006-01-12 10:00");
+$auteur1 = new Auteur("Lulu68", "lulu68@gmail.com", "2007-03-03 10:00");
+$auteur2 = new Auteur("SteveMcQueen", "steve@gmail.com", "2006-01-12 10:00");
 
 // Sujets :
 
-$sujet1 = new Sujet ($cat1, "Je suis nouveau ✌🏽", "2007-03-03 10:30", $auteur1, false);
-$sujet2 = new Sujet ($cat1, "Concours site vitrine 💪🏽","2011-10-07 09:05", $auteur2, true);
-$sujet3 = new Sujet ($cat2, "Help ! Je comprends rien au POO", "2007-03-10 11:30", $auteur1, false);
+$sujet1 = new Sujet($cat1, "Je suis nouveau ✌🏽", "2007-03-03 10:30", $auteur1, false);
+$sujet2 = new Sujet($cat1, "Concours site vitrine 💪🏽", "2011-10-07 09:05", $auteur2, true);
+$sujet3 = new Sujet($cat2, "Help ! Je comprends rien au POO", "2007-03-10 11:30", $auteur1, false);
 
 // Messages : 
 
-$messages1 = new Message ("Hello moi c'est Lulu, je suis un bébé dev 😄 j'espère que vous serez patients avec moi", "2007-03-03 10:30", $auteur1, $sujet1);
+$messages1 = new Message("Hello moi c'est Lulu, je suis un bébé dev 😄 j'espère que vous serez patients avec moi", "2007-03-03 10:30", $auteur1, $sujet1);
 
-$messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes contents de voir un petit nouveau nous rejoindre. N'hésite pas à faire appel à nous en cas de besoin!", "2007-03-03 10:39", $auteur2, $sujet1);
+$messages2 = new Message("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes contents de voir un petit nouveau nous rejoindre. N'hésite pas à faire appel à nous en cas de besoin!", "2007-03-03 10:39", $auteur2, $sujet1);
 
 // TESTS : 
 
@@ -40,7 +39,7 @@ $messages2 = new Message ("Salut Lulu ! Bienvenu sur le forum 😄 Nous sommes c
 //     . "- ". $cat2. "<br>"
 //     . "- ". $cat3. "<br";
 
-    
+
 
 
 
@@ -50,15 +49,15 @@ $gestioncategories = new GestionCat($cat1, $cat2, $cat3);
 // afficher liste des catégories : 
 
 
- $gestioncategories -> afficherListeCategories();
+$gestioncategories->afficherListeCategories();
 
 
 //Afficher le nombre de sujet par catégorie : 
 echo "<br> <br>  ";
 
-$cat1 -> nbSujetCategorie();
-$cat2 -> nbSujetCategorie();
-$cat3 -> nbSujetCategorie();
+$cat1->nbSujetCategorie();
+$cat2->nbSujetCategorie();
+$cat3->nbSujetCategorie();
 
 // Afficher détail d'un sujet : 
 
@@ -70,26 +69,23 @@ $cat3 -> nbSujetCategorie();
 
 //Afficher messages d'un sujet 
 
-$sujet1 -> afficherMessages();
-$sujet2 -> afficherMessages();
-$sujet3 -> afficherMessages();
+$sujet1->afficherMessages();
+$sujet2->afficherMessages();
+$sujet3->afficherMessages();
 // Afficher tous les sujets d'un auteur : la date de création et 
 // var_dump($auteur1);
 echo "<br> <br> <br> <br> <br> ";
 
- // POUR ACTIONS DE VERROUILLAGE OU DEVERROUILLAGE: 
+// POUR ACTIONS DE VERROUILLAGE OU DEVERROUILLAGE: 
 
-// $sujet1 -> verrouillerSujet(true, $auteur1);
+$sujet1 -> verrouillerSujet(true, $auteur1);
 
-echo "<br> $auteur2 tente de clôturer le sujet $sujet1<br>";
+// echo "<br> $auteur2 tente de clôturer le sujet $sujet1<br>";
 
-$sujet1 -> verrouillerSujet(true, $auteur2);
+// $sujet1->verrouillerSujet(true, $auteur2);
 
 //! Statut dans les tableausSUjetsAUteur()dépend de la fonction précédentes, donc attend à l'ordre des fonctions.
 
 echo "<br> <br> <br> <br> <br> <br> ";
-$auteur1 -> tableauSujetsAuteur();
-$auteur2 -> tableauSujetsAuteur();
-
-
-
+$auteur1->tableauSujetsAuteur();
+$auteur2->tableauSujetsAuteur();
