@@ -83,8 +83,8 @@ class Auteur {
         <thead >
         
             <tr>
-                <th> Titres </th>
-                <th> Statut </th>
+            <th style='border: 1px solid black;'> Sujets </th>
+            <th style='border: 1px solid black;'> Statuts </th>
             </tr>
             </thead>
             <tbody>"; // ouverture tbody qui a été ouvert ligne 55 
@@ -104,8 +104,8 @@ class Auteur {
  
 
 echo "<tr>".
-        "<td style='color:#808080; width: 70% ;text-align:center'>".$sujet -> getTitre ()."</td>"."<td style='display:flex; justify-content:center; '><p style='color:#FFF; font-size:10px; background-color:" . ($sujet->getverrouille() ? "#d43c6c" : "#36bf94") . "; width: 50px;  margin:px; padding:5px'>" . mb_strtoupper($sujet->getverrouille() ? "Clôturé" : "Ouvert") . "</p></td>";
-        echo "</tr>";
+"<td style='color:#6c757d; width: 70% ;text-align:center; border: 1px solid black;'>".$sujet -> getTitre ()."</td>"."<td style='display:flex; justify-content:center; border-right: 1px solid black; border-bottom: 1px solid black;'><p style='color:#FFF; font-size:10px; background-color:" . ($sujet->getverrouille() ? "#d43c6c" : "#36bf94") . "; width: 50px;  margin:px; padding:5px'>" . mb_strtoupper($sujet->getverrouille() ? "Clôturé" : "Ouvert") . "</p></td>";
+echo "</tr>";
             
             
             
