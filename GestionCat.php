@@ -1,4 +1,4 @@
-<?php 
+t<?php 
 
 class GestionCat
 {
@@ -20,9 +20,11 @@ class GestionCat
 
     public function afficherListeCategories() // permet d'afficher la liste de toutes les catégories en utilisant une boucle foreach pour parcourir le tableau $categories.
     { 
-        echo "Voici toutes les catégories : <br>";
+         echo" Voici toutes les catégories ";
+         
         foreach ($this->categories as $categorie) {
-            echo "<li>" . $categorie->getLibelle() . "</li>";
+            echo "<div class='menu-deroulant'>"
+             ."<li>" . $categorie->getLibelle() . "</li>" ."</div>";
         }
     }
 }

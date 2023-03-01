@@ -34,7 +34,7 @@ public function addSujet($sujet)
 public function nbSujetCategorie()
 {
     $nbSujets = count($this -> sujets);
-    echo "<br> <br>La catégorie " . $this -> libelle. " :<br> <br> Nombre de sujets : ". $nbSujets ."<br>";
+    echo "<br> <br>La catégorie " . $this -> libelle. " :<br>  Nombre de sujets : ". $nbSujets ."<br>";
 }
 
 
