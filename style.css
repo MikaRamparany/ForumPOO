@@ -1,3 +1,8 @@
+body {
+  font-family: 'sans-serif', serif;
+  background-color: #edf6f9;
+}
+
 .Titre {
     
     display :flex;
@@ -76,4 +81,3 @@
 
   
   
-

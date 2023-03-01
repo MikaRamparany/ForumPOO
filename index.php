@@ -54,10 +54,11 @@ $gestioncategories = new GestionCat($cat1, $cat2, $cat3);
 
 
 //Afficher le nombre de sujet par catégorie : 
-echo "<br> <br> <br> <br> <br> ";
+echo "<br> <br>  ";
 
 $cat1 -> nbSujetCategorie();
 $cat2 -> nbSujetCategorie();
+$cat3 -> nbSujetCategorie();
 
 // Afficher détail d'un sujet : 
 
