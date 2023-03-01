@@ -49,7 +49,9 @@ $gestioncategories = new GestionCat($cat1, $cat2, $cat3);
 
 // afficher liste des catégories : 
 
-$gestioncategories -> afficherListeCategories();
+
+//  $gestioncategories -> afficherListeCategories();
+
 
 //Afficher le nombre de sujet par catégorie : 
 echo "<br> <br> <br> <br> <br> ";
@@ -59,8 +61,9 @@ $cat2 -> nbSujetCategorie();
 
 // Afficher détail d'un sujet : 
 
-$sujet2 -> showInfoSujet();
-$sujet1 -> showInfoSujet();
+// $sujet2 -> showInfoSujet();
+// $sujet1 -> showInfoSujet(); //! plus besoin de cette fonction car infos dans la fonction afficher Messages ci-dessous
+
 
 
 
