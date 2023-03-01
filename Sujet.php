@@ -9,6 +9,7 @@ class Sujet
     private Auteur $auteur; // un sujet n'a qu'un auteur 
     private Categorie $categorie; // un sujet n'a qu'un categorie 
     private array $messages;
+    private array $sujets;
 
 public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur, $verrouille) 
 
@@ -21,9 +22,11 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
     $this -> categorie ->addSujet($this);
     $this-> messages = [];
     $this-> auteur-> addSujet($this);
+    $this-> sujets = [];
     }
 // getters and setters
-    public function getTitre() : string {
+    public function getTitre() 
+    {
         return $this->titre;
     }
 
@@ -59,20 +62,12 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
     public function getMessages() {
         return $this->messages;
     }
-    public function statutSujet()
 
-    {  
-        if ($this -> verrouille == true)
-        {
-            return 'Clôturé';
-            
-        
-        }
-        else {
-            return 'Ouvert';
-     
-        }
-    }
+
+
+ 
+
+    
     public function verrouille(bool $verrouille) 
     
     {
@@ -98,39 +93,47 @@ public function __construct ( $categorie,$titre, $datePubliSujet, Auteur $auteur
 
 
         $messages = $this->getMessages();
-        if ($messages) {
-            foreach ($messages as $message) {
+        if ($messages) 
+        {
+            foreach ($messages as $message) 
+            { 
                 echo "<div class='message'>"
+                
                 ." <p class= 'Button'>" ."<button>Répondre</button> </p>"
+                
                 . "<p class='contenu'>" 
                 . $message->getContenu() . "</p>"
                 . "<p class='info'>" 
+                ."<hr>" //ajouter la balise hr pour trait séparateur
                 . "Publié par <span class='auteur'>" . $message->getAuteur()->getPseudo() 
+                
                 . "</span> le <span class='date'>" . $message->getdatePubliMessage()->format('d/m/Y H:i:s') 
                 . "</span></p>";
                 echo "</div>";
             }
-        } else {
+        } else 
+            {
             echo "Aucun message pour ce sujet.";
+            }
+           
+        }
+
+    
+    public function verrouillerSujet(bool $verrouille, Auteur $auteur) 
+    {
+        if ($auteur === $this->auteur) {
+            $this->verrouille = $verrouille;
+            echo "Le sujet " . $this-> getTitre () ." a été " . ($verrouille ? "clôturé" : "ré-ouvert") . ".";
+        } else {
+            echo "Vous n'êtes pas autorisé à clôturer ce sujet.";
         }
     }
+
     
-    public function showInfoSujet() // on va afficher le titre du sujet, la date de création, l'auteur ainsi que les messages qui y sont liés.
-
-    {   echo " <br> Sujet : " ;
-        echo " " 
-        
-
-        ." ' ".$this -> titre ." ' ".$this  -> statutSujet() 
-        
-        . " : ". "créé le " . $this -> datePubliSujet->format("d/m/Y") . " par " .$this-> auteur -> getPseudo()
-        ."<br> Total messages : ". count($this-> messages)."<br>";
-    }
-
-public function __toString()
-{
+    public function __toString()
+    {
     return $this -> titre;
-}
+    }
 
 
 }
