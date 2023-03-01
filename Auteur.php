@@ -46,6 +46,33 @@ class Auteur {
         $this -> sujets[] = $sujet;
     }
 
+    // ! JE VAIS CREER UNE METHODE POUR RECUPERER LES SUJETS VERROUILES OU OUVERT CREES PAR L'AUTEUR, CA ME PERMETTRA PAR APRÈS DE LIER LES STATUTS À LA COLONNE 'STATUT' DES SUJETS. 
+    //! ENSUITE je vais je vais créer une méthode dans la classe Sujet, pour définir le statut l'appeler lors de la création du sujet dans le construct.
+
+
+    public function getSujetsVerrouilles()
+    {
+        $sujetsVerrouilles = [];
+        foreach ($this->sujets as $sujet) {
+            if ($sujet->getverrouille()) {
+                $sujetsVerrouilles[] = $sujet;
+            }
+        }
+        return $sujetsVerrouilles;
+    }
+    
+    public function getSujetsOuverts()
+    {
+        $sujetsOuverts = [];
+        foreach ($this->sujets as $sujet) {
+            if (!$sujet->getverrouille()) {
+                $sujetsOuverts[] = $sujet;
+            }
+        }
+        return $sujetsOuverts;
+    }
+    
+    
     public function tableauSujetsAuteur()
     {
         echo "<br><span style='font-size:22px ; color:black'>  Voici les sujets créés par 
@@ -90,6 +117,6 @@ echo "<tr>".
 
     public function __toString() 
     {
-        return $this->pseudo . ' ' . $this->dateInscription->format('d-m-Y');
+        return $this->pseudo ;
     }
 }
