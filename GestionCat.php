@@ -1,36 +1,30 @@
-t<?php 
+<?php
 
-class GestionCat
-{
-    private array $categories;
-    
-
-    public function __construct( Categorie ...$categories)
+    class GestionCat
     {
-        
-        $this ->categories = $categories;
-        
+        private array $categories;
 
-    }
 
-    public function addCategorie(Categorie $categorie) // permet d'ajouter une catégorie à ce tableau
-    {
-        return $this->categories[] = $categorie;
-    }
+        public function __construct(Categorie ...$categories)
+        {
 
-    public function afficherListeCategories()
-    {
-        echo "<link rel='stylesheet' href='feuilles css/menuListe.css' />";
-        echo "<div class='menu-titre'>Voici toutes nos catégories</div>"
-        ."<ul class='menu-deroulant'>";
-        
-        foreach ($this->categories as $categorie) {
-            echo "<li>" . $categorie->getLibelle() . "</li>";
+            $this->categories = $categories;
         }
-        
-        echo "</ul>";
-    }
-    
 
-   
-}
+        public function addCategorie(Categorie $categorie) // permet d'ajouter une catégorie à ce tableau
+        {
+            return $this->categories[] = $categorie;
+        }
+
+        public function afficherListeCategories()
+        {
+            echo "<div class='menu-titre'>Voici toutes nos catégories</div>"
+                . "<ul class='menu-deroulant'>";
+
+            foreach ($this->categories as $categorie) {
+                echo "<li>" . $categorie->getLibelle() . "</li>";
+            }
+
+            echo "</ul>";
+        }
+    }
